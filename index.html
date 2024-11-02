@@ -3,250 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY PROFILE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Formulir Pendaftaran</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- NAVBAR -->
-<header class="stiky-harder">
-<nav class="navbar">
-    <div class="logo">
-        <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#profile">PROFILE</a></li>
-            <li><a href="#skills">SKILL</a></li>
-            <li><a href="#experience">EXPERIENCE</a></li>
-            <li><a href="#hobby">HOBBY</a></li>
-            <li><a href="#contact">CONTACT ME</a></li>
-        </ul>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Formulir Pendaftaran</h2>
+        <form>
+            <!-- Input Nama -->
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama" required>
+            </div>
+
+            <!-- Input Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+            </div>
+
+            <!-- Input Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Masukkan Password" required>
+            </div>
+
+            <!-- Input Konfirmasi Password -->
+            <div class="form-group">
+                <label for="confirm-password">Konfirmasi Password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Konfirmasi Password" required>
+            </div>
+
+            <!-- Tombol Submit -->
+            <button type="submit" class="btn btn-primary btn-block">Daftar</button>
+        </form>
     </div>
-</nav>
-</header>
-<!-- NAVBAR SELESAI -->
     
-<!-- CONTENT 1 -->
-<br><br><br>
-<section id="home">
-<div class="judul">
-    WELCOME 
-</div>
-<div class="slideshow-container">
-    <div class="slideshow">
-    <img src="raka2-removebg-preview.png" alt="" class="slide">  
-    <img src="image (1).png" class="slide active" alt="">
-    <img src="WhatsApp_Image_2024-10-05_at_01.34.06_b139df3f-removebg-preview.png" alt="" class="slide">
-    
-    </div>
-</div>
-</section>
-<!-- CONTENT 1 END -->
-<!-- CONTANT 2 -->
-    <br><br><br><br><br><br>
-<section id="profile"> 
-    <div class="container-profile">
 
-        <img src="image (1).png" alt="" class="profile-gambar">
-        <div class="text">
-            <h2>HI, MY NAME IS RAKA BAYU PRASTIANTO</h2>
-            <p>
-                There is a time when the world is full of danger, threats from Earth's enemies, save us, heroes who are human heroes
-                Earth's Saviors Earth's Saviors Aliens have come to conquer Earth for the sake of the cocoa they've been looking for. 
-                <span id="dots">...</span> 
-            <span id="more">They'll arrive soon. What could happen? So we need Earth savior BoBoiBoy! (x3) Ying! Yaya! Gopal! Fang!
-                And our superhero... BoBoiBoy!</span>
-            </p> 
-            <span class="readmore-btn" onclick="toggleReadMore()" id="readMoreBtn">Read More</span>
-        </div>
-    </div>
-</section>
-
-<!-- CONTENT 2 END -->
-<!-- CONTENT 3 -->
-<br><br><br><br><br><br>
-        <section id="skills">
-            <h2>My Skills</h2>
-            
-            <div class="skill">
-                <h3>HTML</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 20%;">
-                        <span class="progress-text">20%</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill">
-                <h3>CSS</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 15%;">
-                        <span class="progress-text">15%</span>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="skill">
-                <h3>JavaScript</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 10%;">
-                        <span class="progress-text">10%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>Pascal</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 15%;">
-                        <span class="progress-text">15%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>BahasaOray</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 5%;">
-                        <span class="progress-text">5%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>MySQL</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 0%;">
-                        <span class="progress-text">baru belajar bro!!!</span>
-                    </div>
-                </div>
-            </div>
-            <div class="skill">
-                <h3>WibuKnowladge</h3>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 90%;">
-                        <span class="progress-text">90%</span>
-                    </div>
-                </div>
-            </div>
-        </section> 
-<!-- CONTENT 3 END? -->
-<!-- CONTENT 4 -->
-        <br><br><br><br><br><br>
-<section id="experience">
-        <h2>My Experience</h2>
-        <br><br><br>
-        <div class="experience-container">
-            <div class="experience-border">
-                <h3>Dingin, Tetapi Tidak Kejam</h3>
-                <div class="experience-scroll">
-                    <img src="download.jpg" alt="Experience 1" class="experience-image">
-                    <p class="experience-description" style="display: none;">
-                        I once got Sevege on Mobile Legends using a blue Alucard at the highest rank.
-                    </p>
-                </div>
-            </div>
-            <div class="experience-border">
-                <h3>One Piece</h3>
-                <div class="experience-scroll">
-                    <img src="one.jpg" alt="Experience 2" class="experience-image">
-                    <p class="experience-description" style="display: none;">
-                        I finished 1000 episodes of One Piece in just one week.
-                    </p>
-                </div>
-            </div>
-            <div class="experience-border">
-                <h3>Depression</h3>
-                <div class="experience-scroll">
-                    <img src="WhatsApp_Image_2024-10-03_at_17.58.jpg" alt="Experience 3" class="experience-image">
-                    <p class="experience-description" style="display: none;">
-                        After I left high school, I started to feel what is called maturity (seeing the face of the person above is truly pathetic).
-                    </p>
-                </div>
-            </div>
-            <div class="experience-border">
-                <h3>HSR</h3>
-                <div class="experience-scroll">
-                    <img src="WhatsApp Image 2024-10-03 at 18.11.36_d327403d.jpg" alt="Experience 4" class="experience-image">
-                    <p class="experience-description" style="display: none;">
-                        I CAN DO THIS ALL DAY WKWKWKW
-                    </p>
-                </div>
-            </div>
-            <div class="experience-border">
-                <h3>Resident Eazy</h3>
-                <div class="experience-scroll">
-                    <img src="hq720.jpg" alt="Experience 5" class="experience-image">
-                    <p class="experience-description" style="display: none;">
-                        I have beaten Jack in the game Resident Evil 4 PS 2 in professional mode using only a knife ("Seriously, the five important things above are your experience, it's really sad but for you hahahah")
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-<!-- CONTENT 4 END     -->
-<!-- CONTENT 5 -->
-
-<section id="hobby">
-<section class="hobby-section">
-    <div class="hobby-container">
-        <h1>My Hobbies</h1>
-
-        <div class="hobby-item">
-            <h2>Music I Love</h2>
-            <div class="music-player">
-                <audio controls>
-                    <source src="_Sesuatu Di Jogja_ - Adhitia Sofyan (official audio)_l2mI4vL95kU.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-        </div>
-
-        <div class="hobby-item">
-            <h2> Video</h2>
-            <div class="video-player">
-                <video controls>
-                    <source src="9mm go bang - shigure ui loli dance [Green Screen] (8k 60_120FPS).mp4" type="video/mp4">
-                    Your browser does not support the video element.
-                </video>
-            </div>
-        </div>
-    </div>
-</section>
-</section>
-    
-<!-- FOOTER -->
-<br><br><br><br>
-<section id="contact">
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-info">
-            <h3>Contact Me</h3>
-            <p>Email:pecelleleituikan@gmail.com </p>
-            <p>Phone: +62 877-5678-9981</p>
-            <p>Address:Bandung St.Dayehkolot,Dayehkolot,Cijagra no 21 </p>
-        </div>
-        <div class="footer-nav">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#">Experience</a></li>
-                <li><a href="https://policies.google.com/privacy?hl=en-US">Privacy Policy</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <h3>Follow Me</h3>
-            <div class="social-icons">
-                <a href="https://youtube.com/@rakabayu586?si=sdmLjqhvZlGcab9n"><img src="youtube.png" alt="Youtube"></a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2024 THE FOUNDER OF AGUS SQUAD. All rights reserved.</p>
-    </div>
-</footer>
-</section>
-<!-- FOOTER END -->
-
-<script src="script.js"></script> 
+    <!-- Link Bootstrap JS dan jQuery (opsional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
