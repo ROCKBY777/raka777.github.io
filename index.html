@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Calculation</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center">Data Calculation Tool</h1>
+        
+        <!-- Data Input Section -->
+        <div class="form-group">
+            <label for="dataInput">Enter Data (comma-separated):</label>
+            <input type="text" class="form-control" id="dataInput" placeholder="e.g., 1, 2, 3, 4, 5">
+        </div>
+        <button class="btn btn-primary" onclick="calculateData()">Calculate</button>
+
+        <!-- Results Table -->
+        <div class="mt-4">
+            <h3>Calculation Results</h3>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Metric</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                    <!-- Results will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Seksi Distribusi -->
+<div class="mt-5">
+    <h3>Perhitungan Distribusi</h3>
+
+    <!-- Input untuk Distribusi Binominal -->
+    <div class="form-group">
+        <label for="nBinom">Masukkan jumlah percobaan (n):</label>
+        <input type="number" class="form-control" id="nBinom" placeholder="Misal: 10">
+    </div>
+    <div class="form-group">
+        <label for="pBinom">Masukkan probabilitas sukses (p):</label>
+        <input type="number" step="0.01" class="form-control" id="pBinom" placeholder="Misal: 0.5">
+    </div>
+    <div class="form-group">
+        <label for="kBinom">Masukkan jumlah keberhasilan (k):</label>
+        <input type="number" class="form-control" id="kBinom" placeholder="Misal: 5">
+    </div>
+    <button class="btn btn-secondary mt-2" onclick="hitungDistribusiBinomial()">Hitung Distribusi Binominal</button>
+
+    <!-- Input untuk Distribusi Poisson -->
+    <div class="form-group mt-4">
+        <label for="lambdaPoisson">Masukkan nilai rata-rata (λ):</label>
+        <input type="number" step="0.01" class="form-control" id="lambdaPoisson" placeholder="Misal: 2">
+    </div>
+    <div class="form-group">
+        <label for="kPoisson">Masukkan jumlah kejadian (k):</label>
+        <input type="number" class="form-control" id="kPoisson" placeholder="Misal: 3">
+    </div>
+    <button class="btn btn-secondary mt-2" onclick="hitungDistribusiPoisson()">Hitung Distribusi Poisson</button>
+</div>
+
+<!-- Hasil Distribusi -->
+<div class="mt-4">
+    <h3>Hasil Perhitungan Distribusi</h3>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Distribusi</th>
+                <th>Rumus</th>
+                <th>Hasil</th>
+            </tr>
+        </thead>
+        <tbody id="hasilDistribusiTable">
+            <!-- Hasil distribusi akan ditambahkan di sini -->
+        </tbody>
+    </table>
+</div>
+<!-- Probability Calculation Section -->
+<div class="mt-5">
+    <h3>Probability Calculation</h3>
+
+    <!-- Inputs for Event Probabilities -->
+    <div class="form-group">
+        <label for="probabilityA">Enter Probability of Event A (P(A)):</label>
+        <input type="number" step="0.01" class="form-control" id="probabilityA" placeholder="e.g., 0.3">
+    </div>
+    <div class="form-group">
+        <label for="probabilityB">Enter Probability of Event B (P(B)):</label>
+        <input type="number" step="0.01" class="form-control" id="probabilityB" placeholder="e.g., 0.5">
+    </div>
+    <div class="form-group">
+        <label for="probabilityIntersection">Enter Probability of Intersection of A and B (P(A ∩ B)):</label>
+        <input type="number" step="0.01" class="form-control" id="probabilityIntersection" placeholder="e.g., 0.1">
+    </div>
+
+    <!-- Buttons for Calculations -->
+    <button class="btn btn-secondary mt-2" onclick="calculateSubset()">Calculate Subset (P(A) ⊆ P(B))</button>
+    <button class="btn btn-secondary mt-2" onclick="calculateUnion()">Calculate Union (P(A ∪ B))</button>
+    <button class="btn btn-secondary mt-2" onclick="calculateIntersection()">Calculate Intersection (P(A ∩ B))</button>
+    <button class="btn btn-secondary mt-2" onclick="calculateConditional()">Calculate Conditional (P(A|B))</button>
+</div>
+
+<!-- Probability Results Section -->
+<div class="mt-4">
+    <h3>Probability Results</h3>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Calculation</th>
+                <th>Formula</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody id="probabilityResultsTable">
+            <!-- Probability results will be dynamically added here -->
+        </tbody>
+    </table>
+</div>
+<!-- Seksi Distribusi Normal -->
+<div class="mt-5">
+    <h3>Perhitungan Distribusi Normal</h3>
+
+    <!-- Input untuk Distribusi Normal -->
+    <div class="form-group">
+        <label for="mean">Masukkan nilai rata-rata (μ):</label>
+        <input type="number" step="0.01" class="form-control" id="mean" placeholder="Misal: 0">
+    </div>
+    <div class="form-group">
+        <label for="stdDev">Masukkan nilai simpangan baku (σ):</label>
+        <input type="number" step="0.01" class="form-control" id="stdDev" placeholder="Misal: 1">
+    </div>
+    <div class="form-group">
+        <label for="xValue">Masukkan nilai X:</label>
+        <input type="number" step="0.01" class="form-control" id="xValue" placeholder="Misal: 1.5">
+    </div>
+    <button class="btn btn-secondary mt-2" onclick="hitungDistribusiNormal()">Hitung Distribusi Normal</button>
+
+    <!-- Grafik untuk Distribusi Normal -->
+    <div class="mt-4">
+        <h3>Grafik Distribusi Normal</h3>
+        <canvas id="normalChart" width="600" height="400"></canvas>
+    </div>
+</div>
+
+<!-- Tabel Hasil Distribusi Normal -->
+<div class="mt-4">
+    <h3>Hasil Perhitungan Distribusi Normal</h3>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Distribusi</th>
+                <th>Rumus</th>
+                <th>Hasil</th>
+            </tr>
+        </thead>
+        <tbody id="hasilNormalTable">
+            <!-- Hasil distribusi normal akan ditambahkan di sini -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Script untuk Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
